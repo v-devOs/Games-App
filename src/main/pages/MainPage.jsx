@@ -1,15 +1,29 @@
 import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import { SeriesRoute } from '../../Series/routes/SeriesRoute'
+import { Card } from '../components/Card'
+import { dataSeries } from '../data/dataSeries'
+
 
 export const MainPage = () => {
 
 
   return (
-    <>
+    <div>
+      <header>
+        <h1>Bienvenido</h1>
+        <h3>Selecciona la Serie de tu interes</h3>
+      </header>
 
-      <h1>Funciona</h1>
+      <div className="container container-series">
+
+        {
+          dataSeries.map( (serie) => (
+            <Card key={serie.name} serie={serie} />
+          ))
+        }
+
+      </div>
+     
       
-    </>
+    </div>
   )
 }
