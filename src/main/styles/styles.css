@@ -1,0 +1,78 @@
+:root{
+  --background-color: #F8F4EA;
+  --secondary-color: #E1D7C6;
+  --contrast-color: #252525;
+  --navbar-color: #579BB1;
+  --contrar-navbar-color: white;
+
+}
+
+*{
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  font-size: 200%;
+  margin: 10px;
+}
+
+
+.espacing{
+  margin: 3%;
+}
+
+.container-headers{
+  text-align: center;
+}
+
+.container-titles{
+  background-color: var(--background-color);
+  padding: 10px;
+  margin: 0 0 50px 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+
+.big-title{
+  font-family: 'Fredoka One';
+  margin: 10px;
+}
+
+.container-series{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--contrar-navbar-color);
+}
+
+.card{
+  background-color: var(--contrast-color);
+  color: var(--contrar-navbar-color);
+  margin: 0 50px;
+  border-radius: 20px;
+}
+
+.card-serie{
+  width: 500px;
+  padding: 50px;
+  text-align: center;
+}
+
+.card-title{
+  font-size: 30px;
+}
+
+.img-serie{
+  width: 300px;
+}
+
+.description{
+  font-size: 20px;
+}

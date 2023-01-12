@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/styles.css'
 
 export const Card = ({ serie }) => {
   return (
@@ -12,11 +13,11 @@ export const Card = ({ serie }) => {
       <div className="card-body">
 
         <div className='card-img'>
-          <img src={serie.img} alt={serie.name} />
+          <img src={serie.img} alt={serie.name} className='img-serie' />
         </div>
 
         <div className="card-description">
-          <p>{serie.description}</p>
+          <p className='description'>{serie.description}</p>
         </div>
       </div>
 

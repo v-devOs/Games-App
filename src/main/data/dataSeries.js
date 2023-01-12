@@ -3,7 +3,7 @@ export const dataSeries = [
   {
     name: 'Pokemon',
     img: '/public/pokemon-img.jpeg',
-    description: 'Narra la historia de Ash Ketchum, un joven entrenador Pokémon de Pueblo Paleta que comienza un viaje para alcanzar su sueño, ser un Maestro Pokémon. La serie está basada en la saga de videojuegos de Pokémon también creada por Satoshi Tajiri, desarrollada por Game Freak y distribuida por Nintendo, que aparecieron por primera vez en el mercado japonés el 27 de febrero de 1996.'
+    description: 'Narra la historia de Ash Ketchum, un joven entrenador Pokémon de Pueblo Paleta que comienza un viaje para alcanzar su sueño, ser un Maestro Pokémon.'
   },
   {
     name: 'Rick and Morty',
