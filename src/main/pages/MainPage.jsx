@@ -8,10 +8,10 @@ export const MainPage = () => {
 
 
   return (
-    <div className='container-main'>
+    <div className='container-main '>
     
-      <div className='container container-titles'>
-        
+      <div className='container-titles animate__animated animate__bounceInDown'>
+
         <header className='container-headers'>
           <h1 className='title big-title'>Bienvenido</h1>
           <h3 className='second-title'>Selecciona la serie de tu interes</h3>
@@ -19,7 +19,7 @@ export const MainPage = () => {
               
       </div>
 
-      <div className="container container-series">
+      <div className="container-series">
 
       {
         dataSeries.map( (serie) => (

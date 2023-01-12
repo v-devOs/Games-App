@@ -22,9 +22,8 @@ header{
   margin: 10px;
 }
 
-
-.espacing{
-  margin: 3%;
+a{
+  text-decoration: none;
 }
 
 .container-headers{
@@ -34,7 +33,7 @@ header{
 .container-titles{
   background-color: var(--background-color);
   padding: 10px;
-  margin: 0 0 50px 0;
+  margin: 0 0 40px 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
