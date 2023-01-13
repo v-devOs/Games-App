@@ -10,7 +10,7 @@ export const Card = ({ serie }) => {
 
   return (
     <Link 
-      onClick={() => changePage( serie.linkSerie ) }
+      onClick={() => changePage( serie.name) }
       to={`${serie.linkSerie}`} 
       className='card animate__animated animate__bounceInUp' >
         <div className='card-serie'>

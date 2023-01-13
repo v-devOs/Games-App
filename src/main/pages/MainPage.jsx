@@ -8,11 +8,11 @@ export const MainPage = () => {
 
 
   return (
-    <div className='container-main '>
+    <div className='container-main'>
     
       <div className='container-titles animate__animated animate__bounceInDown'>
 
-        <header className='container-headers'>
+        <header className='container-headers header-series'>
           <h1 className='title big-title'>Bienvenido</h1>
           <h3 className='title second-title'>Selecciona la serie de tu interes</h3>
         </header>

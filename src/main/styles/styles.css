@@ -17,10 +17,9 @@ body{
   padding: 0;
 }
 
-header{
+.header-series{
   margin: 10px;
   font-size: 200%;
-
 }
 
 a{

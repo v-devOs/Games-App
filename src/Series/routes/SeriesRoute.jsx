@@ -11,7 +11,7 @@ export const SeriesRoute = () => {
       
       <Routes>
         <Route path='pokemon' element={<PokemonPage />} />
-        <Route path='rick/:id' element={<RickMortyPage/>}/>
+        <Route path='rick' element={<RickMortyPage/>}/>
 
         <Route path='/*' element={<Navigate to={'pokemon'} />} />
       </Routes>

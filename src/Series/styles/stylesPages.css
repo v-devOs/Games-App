@@ -1,0 +1,55 @@
+
+.espacing{
+  margin-top: 110px ;
+}
+body{
+  /* background-color: #252525 */
+}
+.container-page{
+  margin: 40px;
+  color: white;
+}
+
+
+.title-page{
+  font-size: 280%;
+}
+
+.container-cards-page{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.card-page{
+  background-color: white;
+  margin: 10px 5px;
+  color: #252525;
+  width: 300px;
+  height: max-content;
+  border-radius: 10px;
+}
+
+.card-header-img{
+  width: 250px;
+}
+
+.card-content{
+  background-color: #D82148;
+  color: white;
+}
+
+.card-body-name{
+  padding: 10px;
+}
+
+.name-item{
+  font-size: 25px;
+}
+
+.card-controls{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+

@@ -19,8 +19,6 @@ export const SerieProvider = ({ children }) => {
 
   const changePage = ( linkSerie ) => {
     const action = { type: types.navigate, payload: linkSerie}
-
-    console.log(linkSerie);
     dispatch( action )
   }
   
