@@ -14,7 +14,7 @@ export const MainPage = () => {
 
         <header className='container-headers'>
           <h1 className='title big-title'>Bienvenido</h1>
-          <h3 className='second-title'>Selecciona la serie de tu interes</h3>
+          <h3 className='title second-title'>Selecciona la serie de tu interes</h3>
         </header>
               
       </div>

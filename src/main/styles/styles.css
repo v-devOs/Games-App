@@ -18,8 +18,9 @@ body{
 }
 
 header{
-  font-size: 200%;
   margin: 10px;
+  font-size: 200%;
+
 }
 
 a{
@@ -38,6 +39,7 @@ a{
   border-bottom-right-radius: 20px;
 
 }
+
 
 .big-title{
   font-family: 'Fredoka One';
@@ -65,7 +67,7 @@ a{
 }
 
 .card-title{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .img-serie{
@@ -74,4 +76,28 @@ a{
 
 .description{
   font-size: 20px;
+}
+
+@media (max-width: 576px) {
+
+  header{
+    font-size: 150%;
+  }
+
+  .container-headers{
+    text-align: left;
+  }
+
+  .card{
+    margin: 20px 0 20px 0;
+  }
+
+  .card-serie{
+    width: 350px;
+    padding: 20px;
+  }
+
+  .img-serie{
+    width: 250px;
+  }
 }
