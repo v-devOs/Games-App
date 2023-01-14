@@ -1,19 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
+import { SerieContext } from '../../auth/context/SerieContext';
 import { useFetch } from '../../hooks/useFetch';
+import { parseData } from '../helpers/parseData';
 import { CardItem } from './CardItem';
 
-export const Card = ({ id }) => {
-  // const endPoint = `https://pokeapi.co/api/v2/pokemon/`
 
-  const { data, isLoading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-  
-  const { name, sprites } = !!data && data
+export const Card = ({ url }) => {
+
+  const { state } = useContext( SerieContext )
+
+  const { data, isLoading } = useFetch( url )
+
+  const item = !!data && parseData( data, state.actualPage )
+
 
   return (
 
     ( isLoading )
       ? 'Cargando...'
-      : <CardItem sprites={sprites} name={name} />
+      : <CardItem {...item} />
     
   )
 }

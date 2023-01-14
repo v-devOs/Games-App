@@ -1,3 +1,6 @@
+button{
+  cursor: pointer;
+}
 
 .espacing{
   margin-top: 110px ;
@@ -5,18 +8,35 @@
 
 .container-page{
   margin: 40px;
+  
 }
 
+.header-page{
+  display: flex;
+  justify-content: space-between;
+}
 
 .title-page{
   font-size: 350%;
+  margin: 0 100px;
+}
+
+
+.page-controls{
+  margin: 10px 100px;
+}
+
+.btn-reload{
+  font-size: 50px;
+  background: none;
+  border: none;
+  color: blue;
 }
 
 .container-cards-page{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .card-page{
@@ -41,7 +61,7 @@
 }
 
 .card-content{
-  background-color: #D82148;
+  background-color: #FEC868;
   color: white;
 }
 

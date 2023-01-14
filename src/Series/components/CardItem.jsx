@@ -1,9 +1,9 @@
 
-export const CardItem = ({ sprites, name}) => {
+export const CardItem = ({ name, img }) => {
   return (
     <div className='card-page'>
       <div className='card-header'>
-        <img src={ sprites.front_default } alt={name} className='card-header-img' />
+        <img src={ img } alt={name} className='card-header-img' />
       </div>
 
       <div className='card-content'>
