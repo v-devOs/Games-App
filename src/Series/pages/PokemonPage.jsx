@@ -1,19 +1,26 @@
-import React from 'react'
-import { useFetch } from '../../hooks/useFetch'
+import React, {useState } from 'react'
 import { Card } from '../components/Card'
 import { getIds } from '../helpers/getIds'
 import '../styles/stylesPages.css'
+import {AiOutlineUndo} from 'react-icons/ai'
 
-export const PokemonPage = () => {
+export const PokemonPage = React.memo(() => {
 
-  const pokemonIds = getIds();
+  const [ pokemonIds, setpokemonIds ] = useState(getIds())
 
+  const reloadPokemons = () => {
+    setpokemonIds( getIds() )
+  }
 
   return (
     <div className='container-page'>
       <header className='espacing header-page'>
         <h1 className="title-page">Bienvenido a la pagina Pokemon</h1>
       </header>
+
+      <div className='page-controlss'>
+        <button onClick={ () => reloadPokemons() } className='btn-reload'> <AiOutlineUndo/> </button>
+      </div>
 
       <div className='container-cards-page'>
         {
@@ -24,4 +31,4 @@ export const PokemonPage = () => {
       </div>
     </div>
   )
-}
+})
