@@ -20,7 +20,19 @@ export const serieReducer = ( state = {}, action = {}) => {
         actualPage: action.payload
       }
     
+    case '[Serie] add to game':
+      return{
+        ...state,
+        charactersToGame: [ ...state.charactersToGame, action.payload ]
+      }
+    
+    case '[Serie] remove to game':
+      return{
+        ...state,
+        charactersToGame: state.charactersToGame.filter( character => character !== action.payload )
+      }
 
+    
     default:
       return state;
   }

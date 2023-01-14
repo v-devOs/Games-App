@@ -6,6 +6,7 @@ import { serieReducer } from './serieReducer'
 const initialState = {
   logged: false,
   actualPage: '/',
+  charactersToGame: []
 }
 
 export const SerieProvider = ({ children }) => {
@@ -21,10 +22,22 @@ export const SerieProvider = ({ children }) => {
     const action = { type: types.navigate, payload: linkSerie}
     dispatch( action )
   }
+
+  const handleAddToGame = ( character ) => {
+    if( !state.charactersToGame.includes( character ) ){
+      const action = { type: types.addToGame, payload: character }
+      dispatch( action )
+    } 
+  }
+
+  const handleRemoveToGame = ( character ) => {
+    const action = { type: types.removeToGame, payload: character }
+    dispatch( action )
+  }
   
 
   return (
-    <SerieContext.Provider value={ {state, login, changePage} }>
+    <SerieContext.Provider value={ {state, login, changePage, handleAddToGame, handleRemoveToGame} }>
       { children }
     </SerieContext.Provider>
   )
