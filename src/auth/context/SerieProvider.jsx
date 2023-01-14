@@ -4,6 +4,7 @@ import { SerieContext } from './SerieContext'
 import { serieReducer } from './serieReducer'
 
 const initialState = {
+  name: '',
   logged: false,
   actualPage: '/',
   charactersToGame: []

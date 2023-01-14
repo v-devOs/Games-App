@@ -2,13 +2,15 @@ import React, {useState } from 'react'
 import { Card } from '../components/Card'
 import { getIds } from '../helpers/getIds'
 import '../styles/stylesPages.css'
-import {AiOutlineUndo} from 'react-icons/ai'
+import {AiOutlineUndo, AiOutlineArrowLeft} from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
 
 const url = `https://pokeapi.co/api/v2/pokemon/`
 
 export const PokemonPage = React.memo(() => {
 
   const [ pokemonIds, setpokemonIds ] = useState(getIds())
+  const navigate = useNavigate()
 
   const reloadPokemons = () => {
     setpokemonIds( getIds() )
@@ -20,7 +22,8 @@ export const PokemonPage = React.memo(() => {
         <h1 className="title-page">Bienvenido a la pagina Pokemon</h1>
 
         <div className='page-controls'>
-          <button onClick={ () => reloadPokemons() } className='btn-reload'> <AiOutlineUndo/> </button>
+          <button onClick={ () => navigate(-1)} className='btn-control'> <AiOutlineArrowLeft/> </button>
+          <button onClick={ () => reloadPokemons() } className='btn-control'>  <AiOutlineUndo/> </button>
         </div>
       </header>
 
