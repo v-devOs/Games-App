@@ -19,7 +19,7 @@ export const NavBar = ({ name }) => {
           className="nav-toggle"> <FaBars /></button>
 
         <ul className={`nav-menu ${ isActive? 'nav-menu_visible' : ''}`}>
-          <li className="nav-menu-item"><Link to={''}  className="nav-menu-link nav-link">Jugar</Link></li>
+          <li className="nav-menu-item"><Link to={'juego'}  className="nav-menu-link nav-link">Jugar</Link></li>
           <li className="nav-menu-item"><Link to={'/'}  className="nav-menu-link nav-link">Logout</Link></li>
         </ul>
 

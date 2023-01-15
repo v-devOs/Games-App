@@ -7,7 +7,7 @@ export const InitialRouter = () => {
     <>
       <Routes>
 
-        <Route path="/*" element={<Login />} />
+        <Route path="/" element={<Login />} />
 
         <Route path="series/*" element={<RoutesMain />}/>
 

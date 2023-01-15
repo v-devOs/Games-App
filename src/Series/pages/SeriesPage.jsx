@@ -1,5 +1,5 @@
 import React,{ useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, Route, Router, Routes, useNavigate } from 'react-router-dom'
 import { SerieContext } from '../../auth/context/SerieContext'
 import {AiOutlineUndo, AiOutlineArrowLeft} from 'react-icons/ai'
 import { Card } from '../components'
@@ -68,6 +68,9 @@ export const SeriesPage = () => {
           }
         </div>
       </div>
+
+      <Link to={'juego'}>Jugar</Link>
+
 
     </>
   )
