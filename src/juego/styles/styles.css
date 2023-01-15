@@ -1,0 +1,66 @@
+.container-game{
+  background-color: #D82148;
+  border-radius: 10px ;
+  color: white;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.container-aux{
+  background-color: #252525;
+  padding: 7%;
+  border-radius: 5px;
+}
+
+#title-game{
+  font-family: 'Fredoka One';
+  font-size: 3rem;
+}
+
+#loading{
+  font-size: 1rem;
+  color: white;
+  background-color: rgb(9, 118, 118);
+  text-align: center;
+}
+
+#pokemon-img{
+  background-color: #252525;
+  width: 230px;
+  border: 15px solid white;
+  border-radius: 5px;
+}
+
+.container-controls{
+  margin: 5% 0;
+}
+
+#input-resp{
+  display: block;
+  width: 100%;
+  height: 45px;
+  margin: 5% 0;
+}
+
+.container-btn{
+  display: flex;
+  justify-content: center;
+}
+#button-check, #btn-reset{
+  width: 100%;
+  height: 35px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .container-main{
+    margin: 0% 25%;
+    padding: 2%;
+  }
+  
+}
