@@ -1,6 +1,6 @@
 import React from 'react'
+import { dataSeries } from '../../data/dataSeries'
 import { Card } from '../components/Card'
-import { dataSeries } from '../data/dataSeries'
 import '../styles/styles.css'
 
 
@@ -8,6 +8,7 @@ export const MainPage = () => {
 
 
   return (
+
     <div className='container-main'>
     
       <div className='container-titles animate__animated animate__bounceInDown'>

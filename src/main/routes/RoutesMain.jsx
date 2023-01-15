@@ -1,5 +1,5 @@
-import { Link, Route, Routes } from "react-router-dom"
-import { SeriesRoute } from "../../Series/routes/SeriesRoute"
+import {  Route, Routes } from "react-router-dom"
+import {  SeriesPage } from "../../Series/pages"
 import { MainPage } from "../pages/MainPage"
 
 export const RoutesMain = () => {
@@ -8,7 +8,7 @@ export const RoutesMain = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         
-        <Route path="/*" element={ <SeriesRoute /> }/>
+        <Route path="serie" element={<SeriesPage /> }/>
 
       </Routes>
 

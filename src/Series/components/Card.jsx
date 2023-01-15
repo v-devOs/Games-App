@@ -5,13 +5,13 @@ import { parseData } from '../helpers/parseData';
 import { CardItem } from './CardItem';
 
 
-export const Card = ({ url }) => {
+export const Card = ({ url, isSingle }) => {
 
   const { state } = useContext( SerieContext )
 
   const { data, isLoading } = useFetch( url )
 
-  const item = !!data && parseData( data, state.actualPage )
+  const item = !!data && parseData( data, state.actualPage.name, isSingle )
 
 
   return (
