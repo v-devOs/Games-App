@@ -1,6 +1,6 @@
 
 export const parseData = ( data, actualPage, isSingle ) => {
-  
+
   return ( !isSingle )
           ? parseSome( data, actualPage )
           : parseSingle( data, actualPage )

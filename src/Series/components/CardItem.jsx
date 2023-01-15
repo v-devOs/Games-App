@@ -6,7 +6,7 @@ export const CardItem = ({ name, img }) => {
   const { handleAddToGame, handleRemoveToGame } = useContext( SerieContext );
 
   return (
-    <div className='card-page'>
+    <div className='card-page animate__animated animate__zoomIn'>
       <div className='card-header'>
         <img src={ img } alt={name} className='card-header-img' />
       </div>

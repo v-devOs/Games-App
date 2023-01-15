@@ -40,16 +40,21 @@ export const SeriesPage = () => {
       <div className='container-page'>
 
         <header className='espacing header-page'>
-          <h1 className="title-page">Bienvenido a la pagina { name }</h1>
+          <div>
+
+            <h1 className="title-page">Bienvenido a la pagina { name }</h1>
+          </div>
+
+            <div>
+            <Search onSearch={onSearchPokemon} /> 
+            </div>
+
 
           <div className='page-controls'>
             <button onClick={ () => navigate('/series',{})} className='btn-control'> <AiOutlineArrowLeft/> </button>
             <button onClick={ () => onReloadPokemons() } className='btn-control'>  <AiOutlineUndo/> </button>
           </div>
         </header>
-
-        <Search onSearch={onSearchPokemon} />
-        
 
         <div className='container-cards-page'>
           {
