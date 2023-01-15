@@ -3,6 +3,8 @@ import { SerieContext } from '../../auth/context/SerieContext';
 import { useFetch } from '../../hooks/useFetch';
 import { parseData } from '../helpers/parseData';
 import { CardItem } from './CardItem';
+import '../styles/stylesPages.css'
+
 
 
 export const Card = ({ url, isSingle }) => {
@@ -15,10 +17,10 @@ export const Card = ({ url, isSingle }) => {
 
 
   return (
-
+      
     ( isLoading )
       ? 'Cargando...'
       : <CardItem {...item} />
-    
+
   )
 }
