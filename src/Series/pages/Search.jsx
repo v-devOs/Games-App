@@ -10,8 +10,10 @@ export const Search = ({ onSearch }) => {
 
   const handleSubmitForm = ( event ) => {
     event.preventDefault();
-    if( inputSearch.legth <= 3) return
-    onSearch( inputSearch );
+
+    if( inputSearch.length <= 3) return
+
+    onSearch( inputSearch.toLowerCase() );
     onResetForm()
   }
 

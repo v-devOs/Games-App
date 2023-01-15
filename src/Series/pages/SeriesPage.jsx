@@ -1,12 +1,10 @@
 import React,{ useContext, useState } from 'react'
-import { Link, Route, Router, Routes, useNavigate } from 'react-router-dom'
 import { SerieContext } from '../../auth/context/SerieContext'
-import {AiOutlineUndo, AiOutlineArrowLeft} from 'react-icons/ai'
 import { Card } from '../components'
 import { getIds } from '../helpers/getIds'
-import { Search } from './Search'
 import '../styles/stylesPages.css'
 import { NavBar } from '../ui/NavBar'
+import { HeaderPage } from '../components/HeaderPage'
 
 export const SeriesPage = () => {
 
@@ -20,7 +18,6 @@ export const SeriesPage = () => {
     url: endPoints.someCharacters
   })
 
-  const navigate = useNavigate()
  
   const onReloadPokemons = () => {
     setCharactersIds({
@@ -37,24 +34,14 @@ export const SeriesPage = () => {
   return (
     <>
       <NavBar name={ name }/>
+      
       <div className='container-page'>
 
-        <header className='espacing header-page'>
-          <div>
-
-            <h1 className="title-page">Bienvenido a la pagina { name }</h1>
-          </div>
-
-            <div>
-            <Search onSearch={onSearchPokemon} /> 
-            </div>
-
-
-          <div className='page-controls'>
-            <button onClick={ () => navigate('/series',{})} className='btn-control'> <AiOutlineArrowLeft/> </button>
-            <button onClick={ () => onReloadPokemons() } className='btn-control'>  <AiOutlineUndo/> </button>
-          </div>
-        </header>
+        <HeaderPage 
+          name={name}
+          onReloadPokemons={onReloadPokemons}
+          onSearchPokemon={onSearchPokemon}
+        />
 
         <div className='container-cards-page'>
           {
@@ -68,9 +55,6 @@ export const SeriesPage = () => {
           }
         </div>
       </div>
-
-      <Link to={'juego'}>Jugar</Link>
-
 
     </>
   )
