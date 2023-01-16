@@ -17,7 +17,7 @@ export const CardItem = ({ name, img }) => {
         </div>
 
         <div className='card-controls'>
-          <button onClick={ () => handleAddToGame( name )} className='btn-add-game'>Agregar</button>
+          <button onClick={ () => handleAddToGame( {name, img} )} className='btn-add-game'>Agregar</button>
           <button onClick={ () => handleRemoveToGame( name )} className='btn-rm-game'>Remover</button>
         </div>
       </div>

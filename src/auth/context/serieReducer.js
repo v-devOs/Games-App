@@ -29,7 +29,7 @@ export const serieReducer = ( state = {}, action = {}) => {
     case '[Serie] remove to game':
       return{
         ...state,
-        charactersToGame: state.charactersToGame.filter( character => character !== action.payload )
+        charactersToGame: state.charactersToGame.filter( ({name}) => name !== action.payload )
       }
 
     
