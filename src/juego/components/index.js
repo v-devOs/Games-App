@@ -1,3 +1,5 @@
 export * from './Controls'
 export * from './InputName'
 export * from './ResetGame'
+export * from './Message'
+export * from './InformationCharacter'
