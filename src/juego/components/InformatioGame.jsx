@@ -5,7 +5,7 @@ import { Buttons } from './Buttons'
 
 
 
-export const InformationGame = React.memo(({ charactersToGame, handleAddLetter }) => {
+export const InformationGame = React.memo(({ charactersToGame }) => {
 
   const [ attemps, incrementAttemps ] = useCounter(0)
   const [ actualCharacter, incrementActualCharacter] = useCounter(0)
@@ -21,7 +21,6 @@ export const InformationGame = React.memo(({ charactersToGame, handleAddLetter }
       {
         <Buttons 
           arrayName={arrayName} 
-          handleAddLetter={handleAddLetter} 
         />
       }
     </div>
