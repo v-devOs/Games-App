@@ -1,24 +1,35 @@
-import React, { useContext } from 'react'
-import { SerieContext } from '../../auth/context/SerieContext'
-import { useCounter } from '../../hooks/useCounter'
-import { Buttons } from '../components/Buttons'
-import { InformationCharacter } from '../components/InformationCharacter'
-// import { Message } from '../components/Message'
-import { parseName } from '../helpers/parseName'
+import React, { useCallback, useContext, useState } from 'react'
+import { InformationGame } from '../components/InformatioGame'
+import { SerieContext } from '../../auth/context/SerieContext';
+import { useCounter } from '../../hooks/useCounter';
+
+
 import '../styles/styles.css'
 
 export const GamePage = () => {
 
+  const [letter, setLetter] = useState('')
+
   const { state } = useContext( SerieContext );
-  const { actualPage,  charactersToGame} = state;
-
+  const { charactersToGame } = state;
   const [ resolve, increment ] = useCounter(0)
-  const [ attemps, incrementAttemps ] = useCounter(0)
   const [ actualLetter, incrementActualLetter ] = useCounter(0)
-  const [ actualCharacter, incrementActualCharacter] = useCounter(1)
 
-  const arrayName = parseName( charactersToGame[actualCharacter].name );
+  
 
+  const handleAddLetter = ( letter, index ) => {
+
+    if( actualLetter === index ){
+      incrementActualLetter()
+      setLetter( (current) => current + letter)
+      
+      return true
+    }
+
+    return false
+  }
+  
+  
   return (
     <div className='container-game'>
       <div className='container-aux'>
@@ -27,6 +38,11 @@ export const GamePage = () => {
           <h2>Has resuelto: { resolve } de { charactersToGame.length }</h2>
         </header>
 
+      
+      <div className='conatiner-letters-name'>
+        <h3>{ letter }</h3>
+      </div>
+
 
         {/* {
           (charactersToGame.length < 5)
@@ -34,12 +50,9 @@ export const GamePage = () => {
             : <InformationCharacter charactersToGame={charactersToGame}/>
         } */}
 
-        <InformationCharacter charactersToGame={charactersToGame} actualCharacter={actualCharacter}/>
-        <Buttons arrayName={arrayName} />
+        <InformationGame charactersToGame={ charactersToGame } handleAddLetter={ handleAddLetter }/>
 
-        <div>
-          <h3>Llevas: {attemps} intentos</h3>
-        </div>
+       
         
       </div>
   </div>

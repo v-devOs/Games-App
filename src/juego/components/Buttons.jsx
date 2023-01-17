@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { randomOrder } from '../helpers'
 
-export const Buttons = ({ arrayName }) => {
+export const Buttons = React.memo(({ arrayName, handleAddLetter }) => {
 
-  const randomOrderName = randomOrder( arrayName );
+  const randomOrderName = useMemo(() => randomOrder( arrayName ), [ arrayName])
+  const [isCorrect, setIsCorrect] = useState( false )
 
+  const onClickButton = ( letter, index ) => {
+    setIsCorrect( handleAddLetter( letter, index ) );
+  }
   return (
     <div className='container-buttons'>
 
     {
       randomOrderName.map( ({letter, index }) => (
-        <button key={index} >{letter}</button>
+        <button
+          className={`btn btn-letter ${ isCorrect? 'disable' : 'visible' }`}
+          onClick={ () => onClickButton( letter, index)} 
+          key={index}>
+            {letter} 
+        </button>
       ))
     }
 
     </div>
   )
-}
+})
