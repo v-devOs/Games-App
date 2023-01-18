@@ -14,7 +14,8 @@ const initialState = {
     resolve: 0,
     attemps: 0,
     actualLetter: 0,
-    actualCharacter: 0
+    actualCharacter: 0,
+    total: 0
   }
   
   

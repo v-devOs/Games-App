@@ -10,9 +10,6 @@ export const GamePage = () => {
 
   const [letter, setLetter] = useState('')
 
-  const { state } = useContext( SerieContext );
-  const { charactersToGame } = state;
-  const [ resolve, increment ] = useCounter(0)
 
     
   return (

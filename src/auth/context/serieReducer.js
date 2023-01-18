@@ -24,8 +24,9 @@ export const serieReducer = ( state = {}, action = {}) => {
       return{
         ...state,
         gameState:{
+          ...state.gameState,
           charactersToGame: [ ...state.gameState.charactersToGame, action.payload.name ],
-          imgCharacters: [ ...state.gameState.imgCharacters, action.payload.img ]
+          imgCharacters: [ ...state.gameState.imgCharacters, action.payload.img ],
         }
       }
     
@@ -33,6 +34,7 @@ export const serieReducer = ( state = {}, action = {}) => {
       return{
         ...state,
         gameState: {
+          ...state.gameState,
           charactersToGame: state.gameState.charactersToGame.filter( (name) => name !== action.payload.name ),
           imgCharacters: state.gameState.imgCharacters.filter( (img) => img !== action.payload.img )
         }

@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { SerieContext } from "../../auth/context/SerieContext"
+import { GameContext } from "../../juego/context/GameContext";
 
 export const CardItem = ({ name, img }) => {
 
-  const { handleAddToGame, handleRemoveToGame } = useContext( SerieContext );
+  const { add } = useContext( GameContext );
 
   return (
     <div className='card-page animate__animated animate__zoomIn'>
@@ -17,8 +18,8 @@ export const CardItem = ({ name, img }) => {
         </div>
 
         <div className='card-controls'>
-          <button onClick={ () => handleAddToGame( name, img )} className='btn-add-game'>Agregar</button>
-          <button onClick={ () => handleRemoveToGame( name, img )} className='btn-rm-game'>Remover</button>
+          <button onClick={ () => add( name )} className='btn-add-game'>Agregar</button>
+          {/* <button onClick={ () => handleRemoveToGame( name, img )} className='btn-rm-game'>Remover</button> */}
         </div>
       </div>
    
