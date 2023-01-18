@@ -20,16 +20,22 @@ export const serieReducer = ( state = {}, action = {}) => {
         actualPage: action.payload
       }
     
-    case '[Serie] add to game':
+    case '[Game] add to game':
       return{
         ...state,
-        charactersToGame: [ ...state.charactersToGame, action.payload ]
+        gameState:{
+          charactersToGame: [ ...state.gameState.charactersToGame, action.payload.name ],
+          imgCharacters: [ ...state.gameState.imgCharacters, action.payload.img ]
+        }
       }
     
-    case '[Serie] remove to game':
+    case '[Game] remove to game':
       return{
         ...state,
-        charactersToGame: state.charactersToGame.filter( ({name}) => name !== action.payload )
+        gameState: {
+          charactersToGame: state.gameState.charactersToGame.filter( (name) => name !== action.payload.name ),
+          imgCharacters: state.gameState.imgCharacters.filter( (img) => img !== action.payload.img )
+        }
       }
 
     

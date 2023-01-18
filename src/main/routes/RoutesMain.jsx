@@ -9,7 +9,7 @@ export const RoutesMain = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         
-        <Route path="serie" element={<SeriesPage /> }/>
+        <Route path="serie" element={ <SeriesPage /> }/>
 
         <Route path="serie/juego" element={<GamePage />}/>
 

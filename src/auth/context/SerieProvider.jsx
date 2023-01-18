@@ -7,7 +7,17 @@ const initialState = {
   name: '',
   logged: false,
   actualPage: '/',
-  charactersToGame: []
+
+  gameState: {
+    charactersToGame: [],
+    imgCharacters: [],
+    resolve: 0,
+    attemps: 0,
+    actualLetter: 0,
+    actualCharacter: 0
+  }
+  
+  
 }
 
 export const SerieProvider = ({ children }) => {
@@ -24,15 +34,18 @@ export const SerieProvider = ({ children }) => {
     dispatch( action )
   }
 
-  const handleAddToGame = ( character ) => {
-    if( !state.charactersToGame.includes( character ) ){
-      const action = { type: types.addToGame, payload: character }
+  const handleAddToGame = ( name, img ) => {
+    const { gameState } = state;
+
+
+    if( !gameState.charactersToGame.includes( name ) && !gameState.imgCharacters.includes( img ) ){
+      const action = { type: types.addToGame, payload: {name, img} }
       dispatch( action )
     } 
   }
 
-  const handleRemoveToGame = ( character ) => {
-    const action = { type: types.removeToGame, payload: character }
+  const handleRemoveToGame = ( name, img ) => {
+    const action = { type: types.removeToGame, payload: {name,img} }
     dispatch( action )
   }
   
