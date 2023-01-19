@@ -16,12 +16,6 @@ export const Card = ({ serie }) => {
 
         <div className='card-serie'>
 
-          <div className="card-body">
-            <div className='card-img'>
-              <img src={serie.img} alt={serie.name} className='img-serie' />
-            </div>
-          </div>
-
           <div className='card-title'>
             <h2>{ serie.name }</h2>
           </div>
