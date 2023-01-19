@@ -5,5 +5,7 @@ export const types = {
   changeActualLetter: '[Game] change actual letter',
   correct: '[Game] letter correct',
   incorrect: '[Game] letter incorrect',
-  finished: '[Game] finished game'
+  finished: '[Game] finished game',
+  finishedName: '[Game] finished name'
+
 }

@@ -59,7 +59,7 @@ a{
 .card{
   background-color: var(--contrast-color);
   color: var(--contrar-navbar-color);
-  margin: 0 50px;
+  margin: 10px 50px;
   border-radius: 20px;
 }
 

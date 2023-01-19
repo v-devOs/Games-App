@@ -6,10 +6,14 @@ import { Button } from './Button'
 export const Buttons = React.memo(({ arrayName }) => {
 
   const randomOrderName = useMemo(() => randomOrder( arrayName ), [ arrayName])
-  const [letter, setLetter] = useState('')
+  const [letters, setLetters] = useState('')
 
-  const onSetLetter = ( letter ) => {
-    setLetter( ( current ) => current + letter)
+  const onSetLetters = ( letter ) => {
+    setLetters( ( current ) => current + letter)
+  }
+
+  const onResetLetters = () => {
+    setLetters('')
   }
 
   return (
@@ -18,7 +22,7 @@ export const Buttons = React.memo(({ arrayName }) => {
     <div className='container-buttons'>
 
       <div className='container-letter-name'>
-        <h3>{ letter }</h3>
+        <h3>{ letters }</h3>
       </div>
 
     {
@@ -26,7 +30,8 @@ export const Buttons = React.memo(({ arrayName }) => {
         <Button 
           key={ letter.index } 
           {...letter}  
-          onSetLetter={onSetLetter}
+          onSetLetter={onSetLetters}
+          onResetLetters={onResetLetters}
         />
       ))
     }

@@ -4,5 +4,5 @@ export const types = {
   logout: '[Serie] logout',
   navigate: '[Serie] navigate',
   addToGame: '[Game] add to game',
-  removeToGame: '[Game] remove to game'
+  removeToGame: '[Game] remove to game',
 }

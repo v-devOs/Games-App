@@ -3,9 +3,9 @@ import { useCounter } from '../../hooks/useCounter'
 import { GameContext } from '../context/GameContext'
 import { getName } from '../helpers/getName'
 
-export const Button = React.memo(({ letter, onSetLetter }) => {
+export const Button = React.memo(({ letter, onSetLetter, onResetLetters }) => {
   
-  const { state, onCorrectLetter, onIncorrectLetter, onFinishedGame } = useContext( GameContext );
+  const { state, onCorrectLetter, onIncorrectLetter, onFinishedGame, onFinishedName } = useContext( GameContext );
   const { attemps ,actualLetter, namesToGame, actualCharacter } = state;
   const [isCorrect, setIsCorrect] = useState(false)
   
@@ -18,13 +18,18 @@ export const Button = React.memo(({ letter, onSetLetter }) => {
       onSetLetter( letter )
       setIsCorrect( true )
 
+      if( actualLetter === arrayName.length - 1 ){
+        console.log('Palabra finalizada');
+        onFinishedName()
+        onResetLetters()
+      }
      
     }
     else if( letter !== arrayName[actualLetter] && attemps < 5){
       onIncorrectLetter()
     }
     else{
-      onFinishedGame()
+      onFinishedGame( false )
     }
   }
   return (

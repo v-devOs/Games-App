@@ -28,8 +28,6 @@ export const GamePage = () => {
         }
 
         
-
-
         <div className='container-attemps'>
           <h2> Llevas { attemps } intentos </h2>
         </div>

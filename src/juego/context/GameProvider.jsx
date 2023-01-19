@@ -40,10 +40,17 @@ export const GameProvider = ({ children }) => {
     dispatch( action )
   }
 
-  const onFinishedGame = () => {
-    const action = { type: types.finished }
+  const onFinishedGame = ( playGame ) => {
+    const action = { type: types.finished, payload: playGame }
     dispatch(action)
   }
+
+  const onFinishedName = () => {
+    console.log('Entre');
+    const action = {type: types.finishedName}
+    dispatch( action )
+  }
+
   return (
     <GameContext.Provider value={{ 
       state, 
@@ -51,7 +58,8 @@ export const GameProvider = ({ children }) => {
       onRemoveToGame, 
       onCorrectLetter,
       onIncorrectLetter,
-      onFinishedGame
+      onFinishedGame,
+      onFinishedName
     }}>
       { children }
     </GameContext.Provider>

@@ -8,7 +8,6 @@ button{
 
 .container-page{
   margin: 40px;
-  
 }
 
 .header-page{
@@ -59,7 +58,6 @@ button{
 
 .card-header-img{
   width: 200px;
-  
 }
 
 .card-content{
@@ -95,16 +93,62 @@ button{
   color: white;
 }
 
-
-/* .form-search{
-  display: flex;
-  flex-direction: column;
-} */
-
 .input-search{
   width: 550px;
   height: 50px;
   font-size: 20px;
   margin-right: 10px;
   border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+
+  .header-page{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: initial;
+  }
+  .container-page{
+    margin: 3px;
+  }
+  .title-page{
+    font-size: 200%;
+  }
+
+  .input-search{
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .page-controls{
+    margin: 0;
+  }
+
+  .btn-control{
+    font-size: 35px;
+  }
+
+  .card-page{
+    margin: 10px;
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
+  }
+
+  .card-header-img{
+    width: 80px;
+  }
+
+  .name-item{
+    font-size: 16px;
+  }
+
+  .btn-rm-game, .btn-add-game{
+    margin-bottom: 10px;
+    height: 25px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+  }
 }

@@ -32,7 +32,15 @@ export const gameReducer = ( state = {}, action ) => {
     case '[Game] finished game':
       return{
         ...state,
-        isPlayGame: false
+        isPlayGame: action.payload
+      }
+    case '[Game] finished name':
+      return{
+        ...state,
+        resolve: state.resolve + 1,
+        attemps: 0,
+        actualLetter: 0,
+        actualCharacter: state.actualCharacter + 1
       }
   
     default:
