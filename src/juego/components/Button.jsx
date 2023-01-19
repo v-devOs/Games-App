@@ -1,24 +1,43 @@
-import React, { useMemo, useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import { useCounter } from '../../hooks/useCounter'
-import { randomOrder } from '../helpers'
+import { GameContext } from '../context/GameContext'
+import { getName } from '../helpers/getName'
 
-export const Button = ({ letter, index, onSetLetter, incrementLetter, actualLetter }) => {
-
+export const Button = React.memo(({ letter, onSetLetter }) => {
+  
+  const { state, onCorrectLetter, onIncorrectLetter, onFinishedGame } = useContext( GameContext );
+  const { attemps ,actualLetter, namesToGame, actualCharacter } = state;
   const [isCorrect, setIsCorrect] = useState(false)
+  
+  const arrayName = getName( namesToGame[actualCharacter] );
 
-  const onClickButton = ( letter, index ) => {
-    if( actualLetter === index){
+  const onClickButton = ( letter ) => {
+    
+    if( letter === arrayName[actualLetter] && attemps < 5){
+      onCorrectLetter()
       onSetLetter( letter )
-      setIsCorrect( !isCorrect )
-      incrementLetter()
+      setIsCorrect( true )
+
+     
+    }
+    else if( letter !== arrayName[actualLetter] && attemps < 5){
+      onIncorrectLetter()
+    }
+    else{
+      onFinishedGame()
     }
   }
   return (
-    <button
-      className={`btn btn-letter ${ isCorrect? 'disable': 'visible' }`}
-      onClick={ () => onClickButton( letter, index )}
-    >
-      { letter }
-    </button>
+    <>
+      <button
+        className={`btn btn-letter ${ isCorrect? 'disable': 'visible' }`}
+        onClick={ () => onClickButton( letter )}
+      >
+        { letter }
+      </button>
+
+    </>
+
+
   )
-}
+})

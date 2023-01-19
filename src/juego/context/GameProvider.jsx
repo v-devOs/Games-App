@@ -10,7 +10,8 @@ const gameState = {
   attemps: 0,
   actualLetter: 0,
   actualCharacter: 0,
-  total: 0
+  total: 0,
+  isPlayGame: true
 }
 
 export const GameProvider = ({ children }) => {
@@ -25,13 +26,33 @@ export const GameProvider = ({ children }) => {
   }
 
   const onRemoveToGame = ( name, img ) => {
-
     const action = { type: types.removeToGame, payload: {name,img}}
     dispatch( action );
   }
-  return (
-    <GameContext.Provider value={{ state, onAddToGame, onRemoveToGame }}>
 
+  const onCorrectLetter = () => {
+    const action = {type: types.correct}
+    dispatch( action )
+  }
+
+  const onIncorrectLetter = () => {
+    const action = { type: types.incorrect}
+    dispatch( action )
+  }
+
+  const onFinishedGame = () => {
+    const action = { type: types.finished }
+    dispatch(action)
+  }
+  return (
+    <GameContext.Provider value={{ 
+      state, 
+      onAddToGame, 
+      onRemoveToGame, 
+      onCorrectLetter,
+      onIncorrectLetter,
+      onFinishedGame
+    }}>
       { children }
     </GameContext.Provider>
   )

@@ -1,21 +1,15 @@
-import React, { useMemo, useState } from 'react'
-import { useCounter } from '../../hooks/useCounter'
+import React, { useContext, useMemo, useState } from 'react'
+import { GameContext } from '../context/GameContext'
 import { randomOrder } from '../helpers'
 import { Button } from './Button'
 
-export const Buttons = React.memo(({ arrayName, handleAddLetter }) => {
+export const Buttons = React.memo(({ arrayName }) => {
 
   const randomOrderName = useMemo(() => randomOrder( arrayName ), [ arrayName])
-  const [isCorrect, setIsCorrect] = useState( false )
   const [letter, setLetter] = useState('')
-  const [ actualLetter, incrementActualLetter ] = useCounter(0)
 
   const onSetLetter = ( letter ) => {
     setLetter( ( current ) => current + letter)
-  }
-
-  const incrementLetter = () => {
-    incrementActualLetter()
   }
 
   return (
@@ -33,8 +27,6 @@ export const Buttons = React.memo(({ arrayName, handleAddLetter }) => {
           key={ letter.index } 
           {...letter}  
           onSetLetter={onSetLetter}
-          incrementLetter={incrementLetter}
-          actualLetter={actualLetter}
         />
       ))
     }

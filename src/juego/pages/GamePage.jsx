@@ -9,7 +9,7 @@ import { GameContext } from '../context/GameContext';
 export const GamePage = () => {
 
   const { state } = useContext( GameContext );
-  const { resolve, attemps, total } = state;
+  const { resolve, attemps, total, isPlayGame } = state;
 
     
   return (
@@ -20,13 +20,15 @@ export const GamePage = () => {
           <h2>Has resuelto: { resolve } de { total }</h2>
         </header>
 
-        {/* {
-          (charactersToGame.length < 5)
-            ? <Message />
-            : <InformationCharacter charactersToGame={charactersToGame}/>
-        } */}
+        {
+          (isPlayGame)
+            ?<InformationGame />
+            : <h2>Perdiste</h2>
 
-        <InformationGame />
+        }
+
+        
+
 
         <div className='container-attemps'>
           <h2> Llevas { attemps } intentos </h2>
