@@ -109,16 +109,16 @@ button{
     align-items: initial;
   }
   .container-page{
-    margin: 3px;
+    margin: 20px;
   }
   .title-page{
     font-size: 200%;
   }
 
   .input-search{
-    width: 100%;
+    width: 70%;
     font-size: 14px;
-    margin: 10px 0;
+    margin: 40px;
   }
 
   .page-controls{
